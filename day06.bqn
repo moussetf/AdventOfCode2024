@@ -1,11 +1,11 @@
 u←•Import "util.bqn"
 x←u.Lines u.GetContents @
-R←4⊸|+⟜1 ⋄ Downto←⊣(1+⊑˜)⎊@(⊑¯1+⍋) ⋄ Upto←⊣(¯1+⊑˜)⎊@(⊑⍋) ⋄ Finite←∧´(∞≠|)
-Go←{rows‿cols 𝕊 i‿j‿d: vert←2|d ⋄ i‿j↩vert⌽i‿j ⋄ a←i⊑vert⊑rows‿cols ⋄ b←a (d≥2)◶Downto‿Upto j ⋄ (vert⌽i‿b)∾R d}
+R←4⊸|+⟜1 ⋄ Do←⊣(1+⊑˜)⎊@(⊑¯1+⍋) ⋄ Up←⊣(¯1+⊑˜)⎊@(⊑⍋) ⋄ Finite←∧´(∞≠|)
+Go←{rows‿cols 𝕊 i‿j‿d: v←2|d ⋄ i‿j↩v⌽i‿j ⋄ a←i⊑v⊑rows‿cols ⋄ b←a (d≥2)◶Do‿Up j ⋄ (v⌽i‿b)∾R d}
 
 # Process the input
 rows‿cols←{¯∞∾𝕩∾∞}∘/⚇1<˘¨⋈⟜⍉>'#'=x
-start←((/∨´¨)∾(∾/¨)) '^'=x
+start←((/∨´¨)∾(∾/¨))'^'=x
 
 # Part 1
 visited←0¨>x
