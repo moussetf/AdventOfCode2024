@@ -1,7 +1,7 @@
 u←•Import "util.bqn"
-x←'0'-˜⊑ u.Lines u.GetContents @
-b‿s←<˘⍉↑‿2⥊x ⋄ n←≠s ⋄ a←((⌈2÷˜≠x)↑⊔˜)/b ⋄ C←+´(↕≠)⊸×
-•Show C (≠∾a)↑∾∾ a ⋈¨ n↑(/s)(⊣⊔≠⊸↑⟜⌽)∾a
-Aux←{i←⊑1⊐˜((≠𝕩)≤s)∧(⊑𝕩)>↕≠s ⋄ s-⟜(≠𝕩)⌾(i⊸⊑)⎊s↩ ⋄ i}
-t←-⟜((1+n)×=⟜n) Aux¨ ⌽a
-•Show C ∾∾∾¨<˘⍉[((⌽t) {𝕨=¯1?𝕩;0¨𝕩}¨ a), n↑t⊔⌽a, ⥊⟜0¨s]
+[fs,hs]←⍉↑‿2⥊'0'-˜⊑ u.Lines u.GetContents @
+n←≠hs ⋄ f←n↑⊔˜/fs ⋄ Cs←+´(↕≠)⊸×
+•Show Cs (+´fs)↑∾⥊ f ≍ n↑ (/hs) (⊣⊔≠⊸↑) ⌽/fs
+Aux←{s←(≠𝕩) ⋄ {𝕩=n?¯1; hs-⟜s⌾(𝕩⊸⊑)↩ ⋄ 𝕩} ⊑1⊐˜(s≤hs)∧(⊑𝕩)>↕n}
+t←Aux¨⌾⌽ f
+•Show Cs ∾⥊⍉ [((¯1=t)×¨f), ∾¨n↑t⊔○⌽f, ⥊⟜0¨hs]
