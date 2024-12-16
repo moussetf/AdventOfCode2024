@@ -3,7 +3,7 @@ x←>u.Lines u.GetContents @
 # Repeat 𝔽 until the value stops changing
 _settle←{⊑((𝔽⊑)⋈⊑)•_while_(⊑≢1⊸⊑) 𝕩‿@}
 # Moves: forwards, backwards, left turn, right turn
-F←{𝕊 [n,w,s,e]: [∞»˘⌾⍉n, ∞»˘w, ∞«˘⌾⍉s, ∞«˘e]}
+F←{𝕊 [n,w,s,e]: [»n, »˘w, «s, «˘e]}
 B←{𝕊 [n,w,s,e]: [«n, «˘w, »s, »˘e]}
 L←¯1⊸⌽ ⋄ R←1⊸⌽
 # Part 1
