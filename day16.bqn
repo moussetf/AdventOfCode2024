@@ -4,7 +4,7 @@ x←>u.Lines u.GetContents @
 _settle←{⊑((𝔽⊑)⋈⊑)•_while_(⊑≢1⊸⊑) 𝕩‿@}
 # Moves: forwards, backwards, left turn, right turn
 F←{𝕊 [n,w,s,e]: [∞»˘⌾⍉n, ∞»˘w, ∞«˘⌾⍉s, ∞«˘e]}
-B←{𝕊 [n,w,s,e]: [«˘⌾⍉n, «˘w, »˘⌾⍉s, »˘e]}
+B←{𝕊 [n,w,s,e]: [«n, «˘w, »s, »˘e]}
 L←¯1⊸⌽ ⋄ R←1⊸⌽
 # Part 1
 mask←{⊑𝕩∊"ES."?0;∞}¨[x,x,x,x]
