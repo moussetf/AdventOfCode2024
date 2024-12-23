@@ -4,5 +4,5 @@ https://adventofcode.com/
 
 Run with e.g.
 ```
-cat input | bqn day01.bqn
+bqn day01.bqn <input
 ```
